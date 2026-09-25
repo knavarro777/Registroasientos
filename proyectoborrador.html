@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Reservaciones</title><!--Título de la página--> 
+        <link rel="icon" href="logo.png" type="image/x-icon"> <!--Estamos indicando el icono que aparecerá en la pestaña-->
+        <link rel="stylesheet" href="style.css"> <!--Se manda a llamar la hoja de estilos-->
+        <script src="proyectoborrador.js"></script> <!--Se manda a llamar el script encargado del funcionamiento de la página-->
+    </head>
+    <body>
+
+        
+	<header id="header"> <!--Abrimos un encabezado donde aparecerá el nombre del sitio, una descripción y el menú de navegación-->
+		
+		<a id="logo-header" href="https://www.youtube.com/watch?v=JqwPCzJnYyY"><!--Link a un MV de youtube-->
+			<span class="site-name">BusBookingExpress</span> <!--Líne de texto donde aparecerá el nombre de la "empresa" de reservaciones-->
+			<span class="site-desc">Reservaciones de asientos online</span> <!--Pequeña descripción-->
+		</a> <!-- /header -->
+
+		<nav> <!--Sección de navegación -->
+			<ul>
+				<li><a href="proyectoborrador.html">Inicio</a></li>
+				<li><a href="about.html">Acerca de</a></li>
+				<li><a href="https://www.ucol.mx/">Contacto</a></li> <!--En forma de lista se forma una sección de navegación
+                las cuales llevarán a otra página, se puede navegar mediante ellos-->
+			</ul>
+		</nav><!-- / nav -->
+
+	</header><!-- Cerramos el encabezado-->
+
+    <br><br>
+    <div class="container"> <!--Se encierra en un contenedor la sección de reservación y eliminación, esto
+    pues serán separados para ponerlos en dos columnas-->
+    <div class="reservation"> <!--Se contiene todo lo relacionado a la reservacion en la etiqueta div para poder darle una posición especifica-->
+        <!--Se le asigna un label a un input tipo texto, con un placeholder que indica donde debe ir
+        la información. se le asigna el id de nombre-->
+        <label for="nombre">Nombre del cliente: </label>
+       <input type="text" id="nombre" placeholder="Ingrese el nombre">
+       <br>
+       <br>
+       <label for="numasientos">Total de asientos:</label>
+       <input type="text" id="numasientos" placeholder="Cantidad a reservar">
+       <br><br>
+            <!--esta vez se trata de un input tipo submit, que es un botón que 
+            enviará los valores del formulario a ser precesados. Se le asigna un valor que será
+            lo que dirá dentro del botón. se le asigna su respectivo id y un evento que accionará
+            una función especifica-->
+       <input type="submit" id="registrar" value="Registrar" onclick="vectornumasientos()">
+
+       <input type="submit" id="modificar" value="Modificar" onclick="modificar()"><br><br>
+    </div>
+    <!--la etiqueta hr sirve para crear un divisor entre la clase reservation y la clase eliminar-->
+    <hr class="divisor">
+    <!--Esta clase no se encuentra dentro de reservation puesto que no irá en cáscada, sino que se
+    creará una segunda columna donde se mostrará esta información-->
+    <div class="eliminar">
+        <!--Se le asigna un label a un input tipo texto, con un placeholder que indica donde debe ir
+        la información. se le asigna el id de nombre-->
+       <label for="eliminacionregistro">Cantidad de asientos a eliminar: </label>
+       <input type="text" id="eliminacionregistro" placeholder="Cantidad a eliminar"><br><br>
+       <input type="reset" id="eliminar" value="Eliminar" onclick="eliminar()"> <br><br>
+    </div>
+</div>
+
+    <!--A partir de aquí ya estamos fuera del contenedor -->
+    <!--Buscando ilustrar de una mejor forma el sistema de reservación, se crea una clase div llamada imagen donde se incluirá
+    un elemento de esta misma indole. se manda a llamar la imagen y se le agrega un leyenda-->
+        <div class="imagen">
+            
+            <img src="photo.png" >
+            <legend>Imagen representativa</legend>
+          </div>
+        
+    <!--Ahora se crea una clase div para la tabña-->
+    <div class="Tabla">
+        <table>
+            <tr><!--En estas celdas estarán los nombres centrados de las filas-->
+                <td class="cabecera"><center>Cantidad de asientos</center></td>
+                <td class="cabecera"><center>Nombre</center></td>
+                <td class="cabecera"><center>Asiento</center></td>
+            </tr>
+
+            <!--Podemos observar que por cada fila hay 3 celdas, la primera con id de terminación .0 se refiere
+            a la columna de cantidad de asientos, el número entero al nombre y la de terminación .1 es de los asientos-->
+            <tr><td id="1.0"></td><td id="1"></td><td id="1.1"></td></tr>
+            <tr><td id="2.0"></td><td id="2"></td><td id="2.1"></td></tr>
+            <tr><td id="3.0"></td><td id="3"></td><td id="3.1"></td></tr>
+            <tr><td id="4.0"></td><td id="4"></td><td id="4.1"></td></tr>
+            <tr><td id="5.0"></td><td id="5"></td><td id="5.1"></td></tr>
+            <tr><td id="6.0"></td><td id="6"></td><td id="6.1"></td></tr>
+            <tr><td id="7.0"></td><td id="7"></td><td id="7.1"></td></tr>
+            <tr><td id="8.0"></td><td id="8"></td><td id="8.1"></td></tr>
+            <tr><td id="9.0"></td><td id="9"></td><td id="9.1"></td></tr>
+            <tr><td id="10.0"></td><td id="10"></td><td id="10.1"></td></tr>
+
+            <tr><td id="11.0"></td><td id="11"></td><td id="11.1"></td></tr>
+            <tr><td id="12.0"></td><td id="12"></td><td id="12.1"></td></tr>
+            <tr><td id="13.0"></td><td id="13"></td><td id="13.1"></td></tr>
+            <tr><td id="14.0"></td><td id="14"></td><td id="14.1"></td></tr>
+            <tr><td id="15.0"></td><td id="15"></td><td id="15.1"></td></tr>
+            <tr><td id="16.0"></td><td id="16"></td><td id="16.1"></td></tr>
+            <tr><td id="17.0"></td><td id="17"></td><td id="17.1"></td></tr>
+            <tr><td id="18.0"></td><td id="18"></td><td id="18.1"></td></tr>
+            <tr><td id="19.0"></td><td id="19"></td><td id="19.1"></td></tr>
+            <tr><td id="20.0"></td><td id="20"></td><td id="20.1"></td></tr>
+
+            <tr><td id="21.0"></td><td id="21"></td><td id="21.1"></td></tr>
+            <tr><td id="22.0"></td><td id="22"></td><td id="22.1"></td></tr>
+            <tr><td id="23.0"></td><td id="23"></td><td id="23.1"></td></tr>
+            <tr><td id="24.0"></td><td id="24"></td><td id="24.1"></td></tr>
+            <tr><td id="25.0"></td><td id="25"></td><td id="25.1"></td></tr>
+            <tr><td id="26.0"></td><td id="26"></td><td id="26.1"></td></tr>
+            <tr><td id="27.0"></td><td id="27"></td><td id="27.1"></td></tr>
+            <tr><td id="28.0"></td><td id="28"></td><td id="28.1"></td></tr>
+            <tr><td id="29.0"></td><td id="29"></td><td id="29.1"></td></tr>
+            <tr><td id="30.0"></td><td id="30"></td><td id="30.1"></td></tr>
+
+            <tr><td id="31.0"></td><td id="31"></td><td id="31.1"></td></tr>
+            <tr><td id="32.0"></td><td id="32"></td><td id="32.1"></td></tr>
+            <tr><td id="33.0"></td><td id="33"></td><td id="33.1"></td></tr>
+            <tr><td id="34.0"></td><td id="34"></td><td id="34.1"></td></tr>
+            <tr><td id="35.0"></td><td id="35"></td><td id="35.1"></td></tr>
+            <tr><td id="36.0"></td><td id="36"></td><td id="36.1"></td></tr>
+            <tr><td id="37.0"></td><td id="37"></td><td id="37.1"></td></tr>
+            <tr><td id="38.0"></td><td id="38"></td><td id="38.1"></td></tr>
+            <tr><td id="39.0"></td><td id="39"></td><td id="39.1"></td></tr>
+            <tr><td id="40.0"></td><td id="40"></td><td id="40.1"></td></tr>
+    </table>
+
+    <br><br>
+
+    <!--Se abre el pie de página-->
+<footer id="footer">
+    <!--En un parrafo se pone el año, un link random de youtube y el nombre del sitio web-->
+    <p>&copy; 2023 <a href="https://www.youtube.com/watch?v=dBDkYofMUs4">BusBookingExpress.com</a></p>
+</footer> <!-- Se cierra el pie de página -->
+
+    </body>
+</html>

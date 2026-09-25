@@ -1,0 +1,267 @@
+
+
+   /*-----------------------------------------------BODY--------------------------------------------*/
+   body {
+    margin: 0;
+    padding: 0; /*Se pone en ceros el margin y el padding para eliminar los espacios no deseados */
+    font-family: Helvetica, Arial, sans-serif; /*Se declara el tipo de letra por "default" para el documento*/
+    color: #666; /*Color de la letra*/
+    background: #f2f2f2; /*color del fondo*/
+    font-size: 1em; /*tamaño de letra*/
+    line-height: 1.5em; /*controla la altura de la linea*/
+    }
+
+    /*Esta clase es exclusivamente para la página about, se le asigna un fondo blanco, un ancho máximo de 800px, un margen de 20px
+    una pequeña sombra a la caja de texto y un padding de 40px*/
+    .text{
+        background: white;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+        padding: 40px;
+    }
+/*-----------------------------------------------HEADER--------------------------------------------*/
+#header { /*Se le aplicará el siguiente diseño al elemento que lleva header como id*/
+    background: #333; /*Indica que el fondo será de un colro grisaceo*/
+    color: white; /*Las letras serán blancas*/
+    height: 80px; /*Establece la altura del encabezado*/
+}	
+
+#header a { /*Indica que se le aplicará el color de letra blanco a los links que se encunetran en el encabezado*/
+    color: white;
+}
+
+/* Estilos que se aplicarán al contenido del header*/
+ /* El texto simulará ser un logo, estrá del lado izquierdo y no tendrá ningún tipo de decoración como subrayados*/
+#logo-header {  
+    float: left;
+    padding: 15px 0 0 20px;
+    text-decoration: none;
+} /*El contenido (nombre y descripcion) se alinearán de lado izquierdo, con cierto padding y sin ninguna decoración como subrayados, etc*/
+
+#logo-header:hover { /*Se aplicará una animación al pasar el puntero por el texto del "logo"*/
+    color: #0b76a6;
+}
+
+ /*Se "bloquea" la posición, es decir que será fija, la fuente será un poco ancha y se le asigna el tamaño de letra*/
+#logo-header .site-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+ /*La fuente de la descripicíon del sitio será un mucho más pequeña y no tan ancha, con un color gris */
+#logo-header .site-desc {
+    display: block;
+    font-weight: 300;
+    font-size: 0.8em;
+    color: #999;
+}
+
+
+/*
+* Navegación
+*/
+nav {
+    float: right; /*El contenido de navegación de alineará a la derecha*/
+}
+
+nav ul {
+    margin: 0;
+    padding: 0; 
+    padding-right: 20px; /*solo se establece un padding del lado derecho*/ 
+}
+
+nav ul li {
+    display: inline-block; /*Indica que los elementos de la lista estarán en línea*/
+    line-height: 80px; /*y que tendrán cierta altura*/
+    }
+        
+nav ul li a {
+    display: block;
+    padding: 0 30px;/*Con este padding los elementos no estarán amontonados*/
+    text-decoration: none; /*Se eliminará el subrayado*/
+}
+        
+nav ul li a:hover {
+    background: #0b76a6; /*Al pasar el cursor por los elementos cambiará el color de fondo de estos*/
+}
+     
+
+/*-----------------------------------------------RESERVACION--------------------------------------------*/
+
+.reservation,
+.eliminar {
+  width: 50%; /* Configura el ancho del 50% para dividir en dos columnas */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+  float: left; /* Hace que los elementos floten a la izquierda para crear columnas */
+  padding-left: 50px; /* Añade espacio interno para mejorar la presentación */
+}
+
+label{
+    /*Se asigna un tipo y tamaño de letra, además, tendra un margen en la parte derecha para que no se pegue con el input*/
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+input[type="submit"], input[type="reset"]{
+	/*Se le asignará un formato general a los botones, esto incluye el tamaño de letra, se dice que serán mostrados en linea
+    con una duracion de transicion de un segundo. Se especifica el tamaño personalizado con height y width. finalmente se le asigna
+    el cursos en modo pointer*/
+    font-size: 20px;
+	border-radius: 2em;
+	transition: 1s;
+    display: inline-block;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+}
+    /*Se les asigna mediante la id un borde de un color especifico a cada botón*/
+#registrar{
+    border: .2em solid hsl(258, 82%, 52%);
+}
+
+#modificar{
+    border: .2em solid  rgb(252, 170, 76);
+}
+
+#eliminar{
+    border: .2em solid rgb(207, 57, 57);
+}
+
+    /* Cambia el color de fondo y texto al pasar el mouse, al tener el foco o al estar activo */
+#modificar:hover,
+#modificar:focus,
+#modificar:active {
+    background-color: rgb(252, 170, 76);
+    color: #fff;
+}
+    /* Cambia el color de fondo y texto al pasar el mouse, al tener el foco o al estar activo */
+#eliminar:hover,
+#eliminar:focus,
+#eliminar:active {
+    background: rgb(207, 57, 57);
+    color: #fff;
+}
+    /* Cambia el color de fondo y texto al pasar el mouse, al tener el foco o al estar activo */
+#registrar:hover,
+#registrar:focus,
+#registrar:active {
+    background-color: rgb(43, 81, 207);
+    color: #fff;
+}
+/*Por su parte, los input tipo texto*/
+input[type="text"]{
+    appearance: none; /* Anula el estilo predeterminado del sistema operativo o navegador */
+	border: none;/* Elimina el borde predeterminado del input */
+	outline: none;/* Elimina el contorno al hacer clic en el input */
+	border-bottom: .2em solid  #0b76a6;/* Establece un borde inferior de color azul al input */
+	padding: 10px;/* Añade un espacio interno de 10px para mejorar el diseño */
+    font-size: 16px;/* Tamaño del texto en el input */
+	color: #0b76a6;/* Color del texto en el input */
+    transition: all 0.3s ease;/* Aplica una transición suave a todos los cambios durante 0.3 segundos */
+}
+
+/* Animación al enfocar */
+input[type="text"]:focus {
+    transform: scale(1.1); /* Aumenta el tamaño al 110% */
+    border-color: #5b1ee9; /* Cambia el color del borde al enfocar */
+  }
+  
+  /* Animación al perder el enfoque */
+  input[type="text"]:not(:focus) {
+    transform: scale(1); /* Restaura el tamaño original */
+    border-color: #ccc; /* Restaura el color del borde original */
+  }
+  /* Limpiar elementos flotantes para evitar problemas de diseño */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+/*Se le dice que el divisor solo debe llevar un porde sólido del lado derecho co 150px de largo*/
+  hr{
+    border: none;
+    border-right: 2px solid;
+    height: 150px;
+ 
+  }
+  /*Se configura la posición del borde, con posición absoluta*/
+  .divisor{
+    position: absolute;
+    margin-left: 600px;
+  }
+
+
+/*-----------------------------------------------TABLA--------------------------------------------*/
+/*Se establece la posición de toda la tabla*/
+.Tabla {
+    width: 100%; /* Configura el ancho al 100% para ocupar todo el contenedor */
+    margin-top: -20px; /* Ya que la tabla queda muy separada, se hace más para arriba*/
+    float: left; /*La tabla estará del lado izquiero*/
+  }
+/*Se le da diseño a la tabla en general*/
+table{
+    margin: 40px; /* Margen alrededor de la tabla */
+    border-collapse: collapse;/* Colapsa los bordes de la tabla para que no haya espacio entre celdas */
+    width: 50%;/* Establece el ancho de la tabla al 50% del ancho del contenedor padre */
+    text-align: center; /*Centra el texto de las celdas*/
+    border-spacing: 1em;/* Espaciado entre las celdas */
+    margin-left: 70px; /* Margen izquierdo adicional */
+
+}
+/*Diseño más personalizado a las celdas*/
+table tr td{ 
+    border: 2px solid #494949; /*Para que el borde sea visible se le da un grosor y color, además de que se define como sólido*/
+    background-color: #bebebe; /*Por default, las celdas serán de color gris*/
+    padding: 10px;/* Espaciado interno dentro de las celdas */
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold; 
+    color: white; /*Se le da diseño a la fuente, el tamaño, tipografía, grosor y color*/
+    
+}
+
+/*Se le da diseño a la cabecera de la tabla, se le aplica un borde solido con un color de fondo más oscuro para que resalte
+Al igual que se especifica todo lo relacionado a la fuente*/
+.cabecera{
+    border: 2px solid #333;
+    background-color: #636363;
+    color: #f2f2f2;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+}
+/*-----------------------------------------------IMAGEN--------------------------------------------*/
+
+/*La clase div imagen es especificamente para configurar la posición de la imagen, se le asigna posición absoluta para poder posicionarla a la 
+izquierda, sin interferir con la tabla */
+.imagen{
+    position:absolute;
+    margin-left: 900px;
+    margin-top: 220px;
+    
+}
+/*Se modifica la resolución, se indica que máximo la imagen puede tener 350px de ancho, el largo se configura automaticamente*/
+img{
+    max-width: 350px;
+}
+
+/*-----------------------------------------------FOOTER--------------------------------------------*/
+#footer { /*Se establece un estilo general al pie de página*/
+    background: #333; /*Se le asigna un color de fondo, que haga matching con el del ecabezado*/
+    color: white;
+    text-align: center; /*Los elementos estarán centrados*/
+    padding: 20px;
+    margin-top: 40px; /*tendrá un pequeño padding y un margen de arriba de 40px*/
+    clear: both; /* Asegura que el pie de página se coloque después de los divs y la tabla */
+    margin-top: 20px; /* Añade un margen superior para separar el pie de página de la tabla */
+    }
+
+#footer p {
+    margin: 0; /*el elemento p no tendrá margen*/
+    }
+                    
+#footer a {
+    color: white; /*el link será de color blanco, y tendrá un subrayado al no indicarse lo contrario*/
+    }
+
